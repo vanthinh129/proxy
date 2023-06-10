@@ -19,7 +19,7 @@ install_3proxy() {
     make -f Makefile.Linux
     mkdir -p /usr/local/etc/3proxy/{bin,logs,stat}
     # Create a Log File
-	touch /var/log/3proxy.log
+	#touch /var/log/3proxy.log
     cp src/3proxy /usr/local/etc/3proxy/bin/
     cp ./scripts/rc.d/proxy.sh /etc/init.d/3proxy
     chmod +x /etc/init.d/3proxy
@@ -31,8 +31,8 @@ gen_3proxy() {
     cat <<EOF
 daemon
 # and the path to logs, and log format. Creation date will be added to a log name
-log /var/log/3proxy.log
-logformat "- +_L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
+#log /var/log/3proxy.log
+#logformat "- +_L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
 maxconn 6000
 nscache 65536
 timeouts 1 5 30 60 180 1800 15 60
